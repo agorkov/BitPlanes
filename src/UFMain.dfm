@@ -110,7 +110,7 @@ object FMain: TFMain
     Top = 358
     Width = 1045
     Height = 25
-    Caption = 'BBitPlanes'
+    Caption = #1056#1072#1079#1083#1086#1078#1080#1090#1100' '#1085#1072' '#1073#1080#1090#1086#1074#1099#1077' '#1087#1083#1086#1089#1082#1086#1089#1090#1080
     TabOrder = 0
     OnClick = BBitPlanesClick
   end
@@ -119,7 +119,7 @@ object FMain: TFMain
     Top = 389
     Width = 1045
     Height = 25
-    Caption = 'BGrayBitPlanes'
+    Caption = #1041#1080#1090#1086#1074#1099#1077' '#1087#1083#1086#1089#1082#1086#1089#1090#1080' '#1074' '#1082#1086#1076#1077' '#1043#1088#1077#1103
     TabOrder = 1
     OnClick = BGrayBitPlanesClick
   end

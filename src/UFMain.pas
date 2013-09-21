@@ -66,7 +66,6 @@ end;
 procedure TFMain.BBitPlanesClick(Sender: TObject);
 var
   i, j, p: word;
-  PixelValue: byte;
   Bin: array [0 .. 7] of TBinaryImage;
 begin
   for p := 0 to 7 do
@@ -135,6 +134,14 @@ end;
 procedure TFMain.FormActivate(Sender: TObject);
 begin
   IOrigin.Canvas.Rectangle(0, 0, IOrigin.Width, IOrigin.Height);
+  IBP0.Canvas.Rectangle(0, 0, IBP0.Width, IBP0.Height);
+  IBP1.Canvas.Rectangle(0, 0, IBP1.Width, IBP1.Height);
+  IBP2.Canvas.Rectangle(0, 0, IBP2.Width, IBP2.Height);
+  IBP3.Canvas.Rectangle(0, 0, IBP3.Width, IBP3.Height);
+  IBP4.Canvas.Rectangle(0, 0, IBP4.Width, IBP4.Height);
+  IBP5.Canvas.Rectangle(0, 0, IBP5.Width, IBP5.Height);
+  IBP6.Canvas.Rectangle(0, 0, IBP6.Width, IBP6.Height);
+  IBP7.Canvas.Rectangle(0, 0, IBP7.Width, IBP7.Height);
 end;
 
 procedure TFMain.IOriginDblClick(Sender: TObject);
@@ -176,6 +183,7 @@ begin
     LoadGSIFromBitMap(GSI, BM);
     BM.Free;
   end;
+  IOrigin.Picture.SaveTofile('Origin.bmp');
 end;
 
 end.
