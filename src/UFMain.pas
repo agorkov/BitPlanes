@@ -95,10 +95,27 @@ begin
   IBP7.Picture.SaveTofile('BP7.bmp');
 end;
 
+function BinToGray(BinValue: byte): byte;
+begin
+  BinToGray := BinValue xor (BinValue shr 1);
+end;
+
+function GrayToBin(GrayValue: byte): byte;
+var
+  BinValue: integer;
+begin
+  BinValue := 0;
+  while GrayValue > 0 do
+  begin
+    BinValue := BinValue xor GrayValue;
+    GrayValue := GrayValue shr 1;
+  end;
+  GrayToBin := BinValue;
+end;
+
 procedure TFMain.BGrayBitPlanesClick(Sender: TObject);
 var
   i, j, p: word;
-  PixelValue: byte;
   Bin: array [0 .. 7] of TBinaryImage;
 begin
   for p := 0 to 7 do
@@ -108,8 +125,7 @@ begin
     for j := 1 to GSI.M do
       for p := 0 to 7 do
       begin
-        PixelValue := GSI.i[i, j] xor (GSI.i[i, j] shr 1);
-        Bin[p].i[i, j] := boolean(PixelValue and byte(round(power(2, p))));
+        Bin[p].i[i, j] := boolean(BinToGray(GSI.i[i, j]) and byte(round(power(2, p))));
       end;
 
   IBP7.Picture.Assign(SaveBinaryImgToBitMap(Bin[7]));
