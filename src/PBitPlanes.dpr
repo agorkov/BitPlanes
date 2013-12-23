@@ -3,7 +3,8 @@ program PBitPlanes;
 uses
   Vcl.Forms,
   UFMain in 'UFMain.pas' {FMain},
-  UImages in '..\..\ImgSharedUnits\src\UImages.pas';
+  UImages in 'D:\ImgSharedUnits\src\UImages.pas',
+  UPixelConvert in 'D:\ImgSharedUnits\src\UPixelConvert.pas';
 
 {$R *.res}
 
